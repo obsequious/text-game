@@ -16,13 +16,13 @@ def living_room():
 	
 	if "tv" in choice or "watch" in choice:
 		print "Ah, SportsCenter."
-#		tv()
+		tv()
 	elif "door" in choice or "out" in choice:
 		print "A perfect autumn evening almost makes you forget what a deadbeat you are."
-#		outside()
+		outside()
 	elif "baby" in choice or "bedroom" in choice:
 		print "Dad to the rescue!"
-#		bedroom()
+		bedroom()
 	else:
 		print "Stop fucking around! Parenting is super important!"
 		
