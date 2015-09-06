@@ -4,7 +4,7 @@ def living_room():
 
 	print "You are sitting in your living room."
 	print "You haven't slept much, so you're not really at 100 percent."
-	print "And just when you think you might have things settled down,"
+	print "And just when you think you might have things calmed down,"
 	print "you hear your baby crying in your bedroom."
 	print "Your wife's in there, trying to get some sleep."
 	print "She's got some big thing tomorrow."
