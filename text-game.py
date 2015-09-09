@@ -1,14 +1,13 @@
 from sys import exit
 
-def living_room():
+def start():
 	print """
 You are sitting in your living room. You haven't slept much, 
 so you're not really at 100 percent. And just when you think
 you might have things calmed down, you hear your baby crying
 in your bedroom. Your wife's in there, trying to get some sleep.
 She's got some big thing tomorrow. Still, you look at the tv.
-You look at the door that used to take you to the outside world.
-	"""
+You look at the door that used to take you to the outside world. """
 	
 	while True:
 		print "What do you do?"
@@ -21,33 +20,26 @@ You look at the door that used to take you to the outside world.
 			bedroom()
 		else:
 			print "Stop fucking around! Parenting is super important!"
+			
+def bedroom():
+	print """
+Dad to the rescue! 
+	"""
 		
 def outside():
 	print """
 You step outside. Breathing the autumn air almost makes up for
-the fact that you're a total deadbeat. So, what are you gonna
-do, Deadbeat Dad? Head for the bar? Or just take a walk to
-"clear your head?"
-	"""
-	
-	while True:		
-		print "Where to?"
-		choice = raw_input("> ")
-		if "walk" in choice:
-			bob()
-		elif "bar" in choice:
-			bar()
-		else:
-			print "You scratch your nuts in quiet contemplation."
+the fact that you're a total deadbeat. """
+			
+	print "Where to?"
+	choice = raw_input("> ")
 		
-def bob():
 	print """
-On your stroll you see your old friend Hobo Bob. You're not
+On your way to %s you see your old friend Hobo Bob. You're not
 entirely sure what place Bob enjoys in the urban ecology. You
 think he might be homeless, although he's usually good for a
 chat. Lately he's been plying you with questionable parenting
-advice. "Hey Chief," he says. Bob likes to call you Chief.
-	"""
+advice. "Hey Chief," he says. Bob likes to call you Chief. """ % choice
 	
 	print "So, what about Bob?"
 	choice = raw_input("> ")
@@ -64,8 +56,7 @@ def bob_advice():
 given. But they're also the greatest curse."
 	
 Bob gives you a conspiratorial smile. He may be willing to
-divulge the world's greatest secret, if only you'd ask.	
-	"""
+divulge the world's greatest secret, if only you'd ask.	"""
 	
 	print "You gonna make Bob's dreams come true?"
 	choice = raw_input("> ")
@@ -75,8 +66,7 @@ divulge the world's greatest secret, if only you'd ask.
 "Well, it's a little know fact, but before the Malacore invasion,
 humans lived forever, and had no need for offspring. Only through
 the Curse of Malingerus Malacorus were we condemned to this endless
-cycle of death and procreation.		
-		"""
+cycle of death and procreation. """
 		bob_beatdown()
 	else:
 		bob_beatdown()
@@ -86,10 +76,10 @@ def bob_beatdown():
 Bob then mumbles something about the need to break chains through
 transcendental fisting. At least you think that's what he says. This 
 must not be one of his better days. You know you need to shake him
-off or you'll come back to the house somewhat worse for the wear.	
-	"""
+off or you'll come back to the house somewhat worse for the wear. """
 	
 	bob_wounded = False
+	count = 0
 	
 	while True:
 		print "Bob's still following you. What do you do?"
@@ -103,20 +93,24 @@ off or you'll come back to the house somewhat worse for the wear.
 And karma, with Bob its intrepid enforcer, has given you a fine
 gift today. Continuing down a path of deadbeatness will only
 lead to awkward conversations and violence. You head home, ready
-to embrace your paternal duties. Good job Dad!
-			"""
+to embrace your paternal duties. Good job Dad! """
 			exit(0)
 		elif "money" in choice:
 			print '"You know I can\'t be bought."'
+		elif "run" in choice:
+			print "Bob trips you."
 		else:
-			print '"I don\'t even know what the fuck that means, man."'
+			if count == 0:
+				print "You try %s, but Bob's a ninja." % choice
+				count += 1
+			elif count == 1:
+				
 			
 def tv():
 	print """
 Your wife's got this for sure. You can flip around a little bit and
 stay in earshot to make sure the baby doesn't get out of hand. Late
-night tv is always fun.
-	"""
+night tv is always fun. """
 	
 	count = 0
 	
@@ -139,8 +133,7 @@ You grab on tight to your nursing wife, your perfect baby nestled
 between you. You vow to become the father to this child you never had.
 You succeed. Your daughter gives a stunning eulogy after you pass
 at the ripe age of 83. Your last thought is of that lacrosse match
-on tv.
-			"""
+on tv. """
 			exit(0)
 		elif "movie" in choice:
 			print """
@@ -154,8 +147,7 @@ You have so much in you. So many dreams. You know you'll keep chasing
 those dreams, one foot in bad parenting and the other in a life of
 quiet desperation. Better to be one great thing than many mediocre ones.
 What do you need? Nothing. You walk out with the clothes on your back.
-Your wife's way less of a fuckup than you. She'll do just fine.
-			"""
+Your wife's way less of a fuckup than you. She'll do just fine. """
 			exit(0)
 		else:
 			if count == 0:
@@ -176,15 +168,7 @@ suit for nothing more than the cost of shipping and handling.
 
 You can't wait to tell your wife about this exciting new development.
 "Look, I don't know how to tell you this," she says, "but I'm fucking
-your best friend. We need to get a divorce."
-				"""
+your best friend. We need to get a divorce." """
 				exit(0)
 
-
-
-"""
-functions needed:
-tv()
-bedroom()
-bar()
-"""
+start()
