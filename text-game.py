@@ -17,14 +17,10 @@ You look at the door that used to take you to the outside world. """
 		elif "door" in choice or "out" in choice:
 			outside()
 		elif "baby" in choice or "bedroom" in choice:
-			bedroom()
+			print "Good dad."
+			start()
 		else:
 			print "Stop fucking around! Parenting is super important!"
-			
-def bedroom():
-	print """
-Dad to the rescue! 
-	"""
 		
 def outside():
 	print """
@@ -104,8 +100,17 @@ to embrace your paternal duties. Good job Dad! """
 				print "You try %s, but Bob's a ninja." % choice
 				count += 1
 			elif count == 1:
+				print "No dice. Bob don't play."
+				count += 1
+			else:
+				print """
+Bob stops you. He gives you a million dollars. He tells you
+a story about being an estranged scion you can barely
+understand. You're now ready to do what only a truly great
+parent can do: send your child to private school. """
+				exit(0)
 				
-			
+				
 def tv():
 	print """
 Your wife's got this for sure. You can flip around a little bit and
